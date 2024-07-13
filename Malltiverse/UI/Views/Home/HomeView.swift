@@ -16,12 +16,21 @@ struct HomeView: View {
 
     var body: some View {
         NavigationStack {
-            VStack(spacing: 24) {
-                Image("logo")
-                    .resizable()
-                    .frame(width: 34, height: 34)
-                    .scaledToFit()
-                
+            VStack(spacing: 32) {
+                HStack {
+                    Image("logo")
+                        .resizable()
+                        .frame(width: 99, height: 31)
+                        .scaledToFit()
+                    Spacer()
+                    Text("Product list")
+                    Spacer()
+
+                    Spacer()
+                        .frame(width: 99)
+                }
+                .padding(.horizontal, 24)
+
                 if vm.isLoading {
                     Spacer()
                     ProgressView()
@@ -47,19 +56,93 @@ struct HomeView: View {
                     }
                 } else {
                     ScrollView(showsIndicators: false) {
-                        LazyVGrid (columns: columns) {
-                            ForEach(vm.products) { item in
-                                NavigationLink {
-                                    DetailView(product: item)
-                                } label: {
-                                    ProductCard(item: item)
+                        
+                        HeadPhoneCard()
+                            .padding(.horizontal, 24)
+                        
+                        VStack(alignment: .leading, spacing: 16) {
+                            Text("Tech Gadget")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                            .padding(.horizontal, 24)
+                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                LazyHStack(spacing: 0) {
+                                 
+                                    ForEach(vm.filterProducts(forCategory: "tech gagdet")) { item in
+                                        NavigationLink {
+                                            DetailView(product: item)
+                                        } label: {
+                                            ProductCard(item: item) {
+                                                //action
+                                            }
+                                            .padding(.leading, 24)
+                                        }
+                                    }
+                                    
+                                    Spacer()
+                                        .frame(width: 24)
                                 }
                             }
-                        }
-                    } // Vgrid
+                            .padding(.bottom, 64)
+                            
+                        }// tech gadget
+                        
+                        VStack(alignment: .leading, spacing: 16) {
+                            Text("Men’s Fashion")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                LazyHStack(spacing: 0) {
+                                    ForEach(vm.filterProducts(forCategory: "men's fashion")) { item in
+                                        NavigationLink {
+                                            DetailView(product: item)
+                                        } label: {
+                                            ProductCard(item: item) {
+                                                //action
+                                            }
+                                                .padding(.leading, 24)
+                                            }
+                                        }
+                                        
+                                        Spacer()
+                                            .frame(width: 24)
+                                }
+                            }
+                            .padding(.bottom, 64)
+                            
+                        }// men's fashion
+                        
+                        VStack(alignment: .leading, spacing: 16) {
+                            Text("Women’s Fashion")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                LazyHStack {
+                                    ForEach(vm.filterProducts(forCategory: "women's fashion")) { item in
+                                        NavigationLink {
+                                            DetailView(product: item)
+                                        } label: {
+                                            ProductCard(item: item) {
+                                                //action
+                                            }
+                                            .padding(.leading, 24)
+                                        }
+                                    }
+                                    
+                                    Spacer()
+                                        .frame(width: 24)
+                                }
+                            }
+                            .padding(.bottom, 64)
+                            
+                        }// women's fashion
+                    }
                 }
             }
-            .padding(.horizontal)
+//            .padding(.horizontal, 24)
             .padding(.top)
             .task{
                 await vm.loadProducts()

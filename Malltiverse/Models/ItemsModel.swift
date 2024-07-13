@@ -14,5 +14,6 @@ struct ItemsModel: Codable, Identifiable {
     let isAvailable: Bool
     let photos: [PhotoModel]
     let currentPrice: [PriceModel]
+    let categories: [CategoryModel]
 
 }

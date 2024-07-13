@@ -8,17 +8,51 @@
 
 /* Begin PBXBuildFile section */
 		CE2B01E92C41A0570085BF39 /* MalltiverseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B01E82C41A0570085BF39 /* MalltiverseApp.swift */; };
-		CE2B01EB2C41A0570085BF39 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B01EA2C41A0570085BF39 /* ContentView.swift */; };
 		CE2B01ED2C41A05E0085BF39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE2B01EC2C41A05E0085BF39 /* Assets.xcassets */; };
 		CE2B01F02C41A05E0085BF39 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE2B01EF2C41A05E0085BF39 /* Preview Assets.xcassets */; };
+		CE2B02022C41A0B90085BF39 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B01F82C41A0B80085BF39 /* ProductCard.swift */; };
+		CE2B02032C41A0B90085BF39 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B01F92C41A0B80085BF39 /* PrimaryButton.swift */; };
+		CE2B02042C41A0B90085BF39 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B01FA2C41A0B80085BF39 /* AddButton.swift */; };
+		CE2B02052C41A0B90085BF39 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B01FB2C41A0B80085BF39 /* Toast.swift */; };
+		CE2B02062C41A0B90085BF39 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B01FE2C41A0B80085BF39 /* HomeView.swift */; };
+		CE2B02072C41A0B90085BF39 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B01FF2C41A0B80085BF39 /* ViewModel.swift */; };
+		CE2B02082C41A0B90085BF39 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B02012C41A0B80085BF39 /* DetailView.swift */; };
+		CE2B020E2C41A0C50085BF39 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B020A2C41A0C50085BF39 /* PhotoModel.swift */; };
+		CE2B020F2C41A0C50085BF39 /* ProductsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B020B2C41A0C50085BF39 /* ProductsModel.swift */; };
+		CE2B02102C41A0C50085BF39 /* PriceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B020C2C41A0C50085BF39 /* PriceModel.swift */; };
+		CE2B02112C41A0C50085BF39 /* ItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B020D2C41A0C50085BF39 /* ItemsModel.swift */; };
+		CE2B02142C41A0CF0085BF39 /* GetProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B02132C41A0CF0085BF39 /* GetProducts.swift */; };
+		CE2B02182C41A0D70085BF39 /* AppErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B02172C41A0D70085BF39 /* AppErrors.swift */; };
+		CEDD6DF22C41DF0C00751024 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD6DF12C41DF0C00751024 /* CategoryModel.swift */; };
+		CEDD6DF62C41E6AF00751024 /* ProductRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD6DF52C41E6AF00751024 /* ProductRating.swift */; };
+		CEDD6DF82C41EE8100751024 /* HeadPhoneCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD6DF72C41EE8100751024 /* HeadPhoneCard.swift */; };
+		CEDD6DFA2C41F33B00751024 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD6DF92C41F33B00751024 /* AppTabView.swift */; };
+		CEDD6DFC2C41F46200751024 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD6DFB2C41F46200751024 /* CustomTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE2B01E52C41A0570085BF39 /* Malltiverse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Malltiverse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2B01E82C41A0570085BF39 /* MalltiverseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalltiverseApp.swift; sourceTree = "<group>"; };
-		CE2B01EA2C41A0570085BF39 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE2B01EC2C41A05E0085BF39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE2B01EF2C41A05E0085BF39 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE2B01F82C41A0B80085BF39 /* ProductCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
+		CE2B01F92C41A0B80085BF39 /* PrimaryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		CE2B01FA2C41A0B80085BF39 /* AddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
+		CE2B01FB2C41A0B80085BF39 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		CE2B01FE2C41A0B80085BF39 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CE2B01FF2C41A0B80085BF39 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		CE2B02012C41A0B80085BF39 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		CE2B020A2C41A0C50085BF39 /* PhotoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		CE2B020B2C41A0C50085BF39 /* ProductsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsModel.swift; sourceTree = "<group>"; };
+		CE2B020C2C41A0C50085BF39 /* PriceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceModel.swift; sourceTree = "<group>"; };
+		CE2B020D2C41A0C50085BF39 /* ItemsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsModel.swift; sourceTree = "<group>"; };
+		CE2B02132C41A0CF0085BF39 /* GetProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetProducts.swift; sourceTree = "<group>"; };
+		CE2B02172C41A0D70085BF39 /* AppErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppErrors.swift; sourceTree = "<group>"; };
+		CEDD6DF12C41DF0C00751024 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		CEDD6DF52C41E6AF00751024 /* ProductRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRating.swift; sourceTree = "<group>"; };
+		CEDD6DF72C41EE8100751024 /* HeadPhoneCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadPhoneCard.swift; sourceTree = "<group>"; };
+		CEDD6DF92C41F33B00751024 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
+		CEDD6DFB2C41F46200751024 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +85,11 @@
 		CE2B01E72C41A0570085BF39 /* Malltiverse */ = {
 			isa = PBXGroup;
 			children = (
+				CE2B01F62C41A0B80085BF39 /* UI */,
+				CE2B02092C41A0C50085BF39 /* Models */,
+				CE2B02122C41A0CF0085BF39 /* Services */,
+				CE2B02152C41A0D70085BF39 /* Utilities */,
 				CE2B01E82C41A0570085BF39 /* MalltiverseApp.swift */,
-				CE2B01EA2C41A0570085BF39 /* ContentView.swift */,
 				CE2B01EC2C41A05E0085BF39 /* Assets.xcassets */,
 				CE2B01EE2C41A05E0085BF39 /* Preview Content */,
 			);
@@ -65,6 +102,92 @@
 				CE2B01EF2C41A05E0085BF39 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CE2B01F62C41A0B80085BF39 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B01F72C41A0B80085BF39 /* Components */,
+				CE2B01FC2C41A0B80085BF39 /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CE2B01F72C41A0B80085BF39 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B01F82C41A0B80085BF39 /* ProductCard.swift */,
+				CE2B01F92C41A0B80085BF39 /* PrimaryButton.swift */,
+				CE2B01FA2C41A0B80085BF39 /* AddButton.swift */,
+				CE2B01FB2C41A0B80085BF39 /* Toast.swift */,
+				CEDD6DF52C41E6AF00751024 /* ProductRating.swift */,
+				CEDD6DF72C41EE8100751024 /* HeadPhoneCard.swift */,
+				CEDD6DFB2C41F46200751024 /* CustomTabView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CE2B01FC2C41A0B80085BF39 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B01FD2C41A0B80085BF39 /* Home */,
+				CE2B02002C41A0B80085BF39 /* Detail */,
+				CEDD6DF92C41F33B00751024 /* AppTabView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE2B01FD2C41A0B80085BF39 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B01FE2C41A0B80085BF39 /* HomeView.swift */,
+				CE2B01FF2C41A0B80085BF39 /* ViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CE2B02002C41A0B80085BF39 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B02012C41A0B80085BF39 /* DetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		CE2B02092C41A0C50085BF39 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B020D2C41A0C50085BF39 /* ItemsModel.swift */,
+				CE2B020A2C41A0C50085BF39 /* PhotoModel.swift */,
+				CE2B020B2C41A0C50085BF39 /* ProductsModel.swift */,
+				CE2B020C2C41A0C50085BF39 /* PriceModel.swift */,
+				CEDD6DF12C41DF0C00751024 /* CategoryModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE2B02122C41A0CF0085BF39 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B02132C41A0CF0085BF39 /* GetProducts.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CE2B02152C41A0D70085BF39 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B02162C41A0D70085BF39 /* Errors */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CE2B02162C41A0D70085BF39 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B02172C41A0D70085BF39 /* AppErrors.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +260,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE2B01EB2C41A0570085BF39 /* ContentView.swift in Sources */,
+				CE2B02082C41A0B90085BF39 /* DetailView.swift in Sources */,
+				CE2B02062C41A0B90085BF39 /* HomeView.swift in Sources */,
+				CEDD6DF82C41EE8100751024 /* HeadPhoneCard.swift in Sources */,
+				CE2B02052C41A0B90085BF39 /* Toast.swift in Sources */,
+				CE2B02112C41A0C50085BF39 /* ItemsModel.swift in Sources */,
 				CE2B01E92C41A0570085BF39 /* MalltiverseApp.swift in Sources */,
+				CE2B02032C41A0B90085BF39 /* PrimaryButton.swift in Sources */,
+				CEDD6DFC2C41F46200751024 /* CustomTabView.swift in Sources */,
+				CE2B02042C41A0B90085BF39 /* AddButton.swift in Sources */,
+				CE2B02072C41A0B90085BF39 /* ViewModel.swift in Sources */,
+				CE2B020E2C41A0C50085BF39 /* PhotoModel.swift in Sources */,
+				CE2B02022C41A0B90085BF39 /* ProductCard.swift in Sources */,
+				CE2B020F2C41A0C50085BF39 /* ProductsModel.swift in Sources */,
+				CE2B02182C41A0D70085BF39 /* AppErrors.swift in Sources */,
+				CEDD6DF62C41E6AF00751024 /* ProductRating.swift in Sources */,
+				CE2B02142C41A0CF0085BF39 /* GetProducts.swift in Sources */,
+				CEDD6DF22C41DF0C00751024 /* CategoryModel.swift in Sources */,
+				CEDD6DFA2C41F33B00751024 /* AppTabView.swift in Sources */,
+				CE2B02102C41A0C50085BF39 /* PriceModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

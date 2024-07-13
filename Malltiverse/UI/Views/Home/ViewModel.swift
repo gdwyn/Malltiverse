@@ -13,6 +13,12 @@ class HomeViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var errorMessage: String?
     
+    func filterProducts(forCategory categoryName: String) -> [ItemsModel] {
+            products.filter { item in
+                item.categories.contains { $0.name == categoryName }
+            }
+        }
+    
     func loadProducts() async {
                 
         DispatchQueue.main.async {

@@ -11,7 +11,7 @@ import SwiftUI
 struct MalltiverseApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppTabView()
         }
     }
 }

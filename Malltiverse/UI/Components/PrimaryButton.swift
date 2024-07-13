@@ -10,6 +10,7 @@ import SwiftUI
 struct PrimaryButton: View {
     
     var title: String
+    var isFilled: Bool
     var action: () -> Void
     
     var body: some View {
@@ -17,16 +18,20 @@ struct PrimaryButton: View {
                 action()
             } label: {
                 Text(title)
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 24)
-                .background(.accent)
-                .cornerRadius(100)
+                    .font(.callout)
+                    .foregroundColor(isFilled ? .white : .black)
+                .padding(12)
+                .background(isFilled ? .accent : .clear)
+                .clipShape(RoundedRectangle(cornerRadius: 14))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 14)
+                        .stroke(isFilled ? .clear : .accent, lineWidth: 1)
+                )
         }
     }
     
 }
 
 #Preview {
-    PrimaryButton(title: "Add to cart") {}
+    PrimaryButton(title: "Add to cart", isFilled: true) {}
 }
