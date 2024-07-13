@@ -25,6 +25,7 @@
 		CE2B02182C41A0D70085BF39 /* AppErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B02172C41A0D70085BF39 /* AppErrors.swift */; };
 		CE355B9B2C42E28D00898965 /* CheckoutSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE355B9A2C42E28D00898965 /* CheckoutSuccess.swift */; };
 		CE355B9E2C42E74E00898965 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CE355B9D2C42E74E00898965 /* Lottie */; };
+		CE355BA12C43126D00898965 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE355BA02C43126D00898965 /* PaymentView.swift */; };
 		CEDD6DF22C41DF0C00751024 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD6DF12C41DF0C00751024 /* CategoryModel.swift */; };
 		CEDD6DF62C41E6AF00751024 /* ProductRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD6DF52C41E6AF00751024 /* ProductRating.swift */; };
 		CEDD6DF82C41EE8100751024 /* HeadPhoneCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD6DF72C41EE8100751024 /* HeadPhoneCard.swift */; };
@@ -56,6 +57,7 @@
 		CE2B02132C41A0CF0085BF39 /* GetProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetProducts.swift; sourceTree = "<group>"; };
 		CE2B02172C41A0D70085BF39 /* AppErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppErrors.swift; sourceTree = "<group>"; };
 		CE355B9A2C42E28D00898965 /* CheckoutSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutSuccess.swift; sourceTree = "<group>"; };
+		CE355BA02C43126D00898965 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		CEDD6DF12C41DF0C00751024 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		CEDD6DF52C41E6AF00751024 /* ProductRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRating.swift; sourceTree = "<group>"; };
 		CEDD6DF72C41EE8100751024 /* HeadPhoneCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadPhoneCard.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				CE2B01FD2C41A0B80085BF39 /* Home */,
 				CEE601782C4253A700C960A1 /* Cart */,
 				CEE601812C42DBCF00C960A1 /* Checkout */,
+				CE355B9F2C43125600898965 /* Payment */,
 				CE2B02002C41A0B80085BF39 /* Detail */,
 				CEDD6DF92C41F33B00751024 /* AppTabView.swift */,
 			);
@@ -206,6 +209,14 @@
 				CE2B02172C41A0D70085BF39 /* AppErrors.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		CE355B9F2C43125600898965 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				CE355BA02C43126D00898965 /* PaymentView.swift */,
+			);
+			path = Payment;
 			sourceTree = "<group>";
 		};
 		CEE601782C4253A700C960A1 /* Cart */ = {
@@ -310,6 +321,7 @@
 				CE2B01E92C41A0570085BF39 /* MalltiverseApp.swift in Sources */,
 				CE2B02032C41A0B90085BF39 /* PrimaryButton.swift in Sources */,
 				CEDD6DFC2C41F46200751024 /* CustomTabView.swift in Sources */,
+				CE355BA12C43126D00898965 /* PaymentView.swift in Sources */,
 				CE2B02042C41A0B90085BF39 /* AddButton.swift in Sources */,
 				CEE6017C2C42549400C960A1 /* CartViewModel.swift in Sources */,
 				CE2B02072C41A0B90085BF39 /* ViewModel.swift in Sources */,

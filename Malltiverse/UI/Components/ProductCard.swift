@@ -33,7 +33,7 @@ struct ProductCard: View {
                 }
                 
             }
-            .frame(width: 160, height: 160)
+            .frame(width: 150, height: 150)
             .padding(16)
             .background(.gray.opacity(0.05))
             .clipShape(RoundedRectangle(cornerRadius: 5))
@@ -43,12 +43,12 @@ struct ProductCard: View {
                     .lineLimit(1)
                     .fontWeight(.medium)
                     .foregroundStyle(.black)
-                    .frame(width: 185, alignment: .leading)
+                    .frame(width: 150, alignment: .leading)
                 
                 Text(item.description ?? "")
                     .lineLimit(1)
                     .foregroundStyle(.gray)
-                    .frame(width: 185)
+                    .frame(width: 150)
                 
                 ProductRating()
                 

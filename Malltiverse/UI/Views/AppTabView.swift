@@ -22,7 +22,7 @@ struct AppTabView: View {
                 .environmentObject(homeViewModel)
                 .tag(2)
             
-            CheckoutView()
+            PaymentView()
                 .environmentObject(homeViewModel)
                 .tag(3)
         }

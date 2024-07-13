@@ -1,5 +1,5 @@
 //
-//  CheckoutView.swift
+//  Payment.swift
 //  Malltiverse
 //
 //  Created by Godwin IE on 13/07/2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CheckoutView: View {
+struct PaymentView: View {
     @State private var cardNumber = ""
     @State private var expiry = ""
     @State private var cvv = ""
@@ -20,7 +20,7 @@ struct CheckoutView: View {
     var body: some View {
         NavigationStack{
             VStack(spacing: 24) {
-                //CustomAppBar(title: "Payment")
+                CustomAppBar(title: "Payment")
                 
                 Image("Card")
                     .resizable()
@@ -81,26 +81,10 @@ struct CheckoutView: View {
             .sheet(isPresented: $showSheet) {
                 CheckoutSuccess()
             }
-            .navigationBarBackButtonHidden(true)
-            .toolbar {
-                
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                        HStack {
-                            Image(systemName: "chevron.left")
-                            Text("Payment")
-                        }
-                    }
-                }
-                
-            }
-
         }
     }
 }
 
 #Preview {
-    CheckoutView()
+    PaymentView()
 }

@@ -46,8 +46,23 @@ struct HomeView: View {
                 } else {
                         ScrollView(showsIndicators: false) {
                             
-                            HeadPhoneCard()
-                                .padding(.horizontal, 24)
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack{
+                                    ForEach(1..<4, id: \.self) { card in
+                                        HeadPhoneCard()
+                                           // .padding(.horizontal, 24)
+                                            .containerRelativeFrame(.horizontal, count: 1, spacing: 24)
+                                            .scrollTransition { content, phase in
+                                                content
+                                                    .opacity(phase.isIdentity ? 1 : 0)
+                                                    .scaleEffect(phase.isIdentity ? 1 : 0)
+                                            }
+                                    }
+                                }
+                                .scrollTargetLayout()
+                            }
+                            .contentMargins(14, for: .scrollContent)
+                            .scrollTargetBehavior(.viewAligned)
                                 
                                 VStack(alignment: .leading, spacing: 16) {
                                     Text("Tech gadgets")
@@ -56,16 +71,16 @@ struct HomeView: View {
                                         .padding(.horizontal, 24)
                                     
                                     ScrollView(.horizontal, showsIndicators: false) {
-                                        LazyHStack(spacing: 0) {
-                                            ForEach(vm.filterProducts(forCategory: "tech gagdet")) { item in
-                                                ProductCard(item: item) {
-                                                    vm.addItem(item)
-                                                }
-                                                .padding(.leading, 24)
-                                            }
-                                            
+                                        HStack {
                                             Spacer()
                                                 .frame(width: 24)
+                                            LazyHStack(spacing: 14) {
+                                                ForEach(vm.filterProducts(forCategory: "tech gagdet")) { item in
+                                                    ProductCard(item: item) {
+                                                        vm.addItem(item)
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                     .padding(.bottom, 64)
@@ -78,38 +93,38 @@ struct HomeView: View {
                                     .padding(.horizontal, 24)
                                 
                                 ScrollView(.horizontal, showsIndicators: false) {
-                                    LazyHStack(spacing: 0) {
-                                        ForEach(vm.filterProducts(forCategory: "men's fashion")) { item in
-                                            ProductCard(item: item) {
-                                                vm.addItem(item)
-                                            }
-                                            .padding(.leading, 24)
-                                        }
-                                        
+                                    HStack {
                                         Spacer()
                                             .frame(width: 24)
+                                        LazyHStack(spacing: 14) {
+                                            ForEach(vm.filterProducts(forCategory: "men's fashion")) { item in
+                                                ProductCard(item: item) {
+                                                    vm.addItem(item)
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                                 .padding(.bottom, 64)
                             }// men
                             
                             VStack(alignment: .leading, spacing: 16) {
-                                Text("Men’s Fashion")
+                                Text("Women's Fashion")
                                     .font(.title3)
                                     .fontWeight(.semibold)
                                     .padding(.horizontal, 24)
                                 
                                 ScrollView(.horizontal, showsIndicators: false) {
-                                    LazyHStack(spacing: 0) {
-                                        ForEach(vm.filterProducts(forCategory: "men's fashion")) { item in
-                                            ProductCard(item: item) {
-                                                vm.addItem(item)
-                                            }
-                                            .padding(.leading, 24)
-                                        }
-                                        
+                                    HStack {
                                         Spacer()
                                             .frame(width: 24)
+                                        LazyHStack(spacing: 14) {
+                                            ForEach(vm.filterProducts(forCategory: "men's fashion")) { item in
+                                                ProductCard(item: item) {
+                                                    vm.addItem(item)
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                                 .padding(.bottom, 64)
