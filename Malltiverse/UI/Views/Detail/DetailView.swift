@@ -81,7 +81,7 @@ struct DetailView: View {
                     .scrollIndicators(.hidden)
                     
                     HStack {
-                        PrimaryButton(title: "Add to cart", isFilled: true) {
+                        PrimaryButton(title: "Add to cart") {
                             showToast(message: "\(product.name) added to cart!")
                             withAnimation(.easeInOut(duration: 0.4)) {
                                 toastScale = 1

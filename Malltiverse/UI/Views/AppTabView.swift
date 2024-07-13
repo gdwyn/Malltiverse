@@ -8,17 +8,22 @@
 import SwiftUI
 
 struct AppTabView: View {
+    @StateObject var homeViewModel = HomeViewModel()
+
     @State private var tabSelection = 1
     
     var body: some View {
         TabView(selection: $tabSelection) {
-            HomeView(vm: HomeViewModel())
+            HomeView()
+                .environmentObject(homeViewModel)
                 .tag(1)
             
-            Text("Tab 2")
+            CartView()
+                .environmentObject(homeViewModel)
                 .tag(2)
             
-            Text("Tab 3")
+            CheckoutView()
+                .environmentObject(homeViewModel)
                 .tag(3)
         }
         .overlay(alignment: .bottom) {

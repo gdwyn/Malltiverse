@@ -23,11 +23,18 @@
 		CE2B02112C41A0C50085BF39 /* ItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B020D2C41A0C50085BF39 /* ItemsModel.swift */; };
 		CE2B02142C41A0CF0085BF39 /* GetProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B02132C41A0CF0085BF39 /* GetProducts.swift */; };
 		CE2B02182C41A0D70085BF39 /* AppErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B02172C41A0D70085BF39 /* AppErrors.swift */; };
+		CE355B9B2C42E28D00898965 /* CheckoutSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE355B9A2C42E28D00898965 /* CheckoutSuccess.swift */; };
+		CE355B9E2C42E74E00898965 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CE355B9D2C42E74E00898965 /* Lottie */; };
 		CEDD6DF22C41DF0C00751024 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD6DF12C41DF0C00751024 /* CategoryModel.swift */; };
 		CEDD6DF62C41E6AF00751024 /* ProductRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD6DF52C41E6AF00751024 /* ProductRating.swift */; };
 		CEDD6DF82C41EE8100751024 /* HeadPhoneCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD6DF72C41EE8100751024 /* HeadPhoneCard.swift */; };
 		CEDD6DFA2C41F33B00751024 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD6DF92C41F33B00751024 /* AppTabView.swift */; };
 		CEDD6DFC2C41F46200751024 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD6DFB2C41F46200751024 /* CustomTabView.swift */; };
+		CEE6017A2C4253CE00C960A1 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE601792C4253CE00C960A1 /* CartView.swift */; };
+		CEE6017C2C42549400C960A1 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6017B2C42549400C960A1 /* CartViewModel.swift */; };
+		CEE6017E2C42B86E00C960A1 /* CustomAppBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6017D2C42B86E00C960A1 /* CustomAppBar.swift */; };
+		CEE601802C42D04000C960A1 /* ShoppingSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6017F2C42D04000C960A1 /* ShoppingSummary.swift */; };
+		CEE601832C42DBEA00C960A1 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE601822C42DBEA00C960A1 /* CheckoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,11 +55,17 @@
 		CE2B020D2C41A0C50085BF39 /* ItemsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsModel.swift; sourceTree = "<group>"; };
 		CE2B02132C41A0CF0085BF39 /* GetProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetProducts.swift; sourceTree = "<group>"; };
 		CE2B02172C41A0D70085BF39 /* AppErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppErrors.swift; sourceTree = "<group>"; };
+		CE355B9A2C42E28D00898965 /* CheckoutSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutSuccess.swift; sourceTree = "<group>"; };
 		CEDD6DF12C41DF0C00751024 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		CEDD6DF52C41E6AF00751024 /* ProductRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRating.swift; sourceTree = "<group>"; };
 		CEDD6DF72C41EE8100751024 /* HeadPhoneCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadPhoneCard.swift; sourceTree = "<group>"; };
 		CEDD6DF92C41F33B00751024 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		CEDD6DFB2C41F46200751024 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		CEE601792C4253CE00C960A1 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		CEE6017B2C42549400C960A1 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		CEE6017D2C42B86E00C960A1 /* CustomAppBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAppBar.swift; sourceTree = "<group>"; };
+		CEE6017F2C42D04000C960A1 /* ShoppingSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingSummary.swift; sourceTree = "<group>"; };
+		CEE601822C42DBEA00C960A1 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE355B9E2C42E74E00898965 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +137,8 @@
 				CEDD6DF52C41E6AF00751024 /* ProductRating.swift */,
 				CEDD6DF72C41EE8100751024 /* HeadPhoneCard.swift */,
 				CEDD6DFB2C41F46200751024 /* CustomTabView.swift */,
+				CEE6017D2C42B86E00C960A1 /* CustomAppBar.swift */,
+				CEE6017F2C42D04000C960A1 /* ShoppingSummary.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -131,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				CE2B01FD2C41A0B80085BF39 /* Home */,
+				CEE601782C4253A700C960A1 /* Cart */,
+				CEE601812C42DBCF00C960A1 /* Checkout */,
 				CE2B02002C41A0B80085BF39 /* Detail */,
 				CEDD6DF92C41F33B00751024 /* AppTabView.swift */,
 			);
@@ -190,6 +208,24 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		CEE601782C4253A700C960A1 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				CEE601792C4253CE00C960A1 /* CartView.swift */,
+				CEE6017B2C42549400C960A1 /* CartViewModel.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		CEE601812C42DBCF00C960A1 /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				CEE601822C42DBEA00C960A1 /* CheckoutView.swift */,
+				CE355B9A2C42E28D00898965 /* CheckoutSuccess.swift */,
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -206,6 +242,9 @@
 			dependencies = (
 			);
 			name = Malltiverse;
+			packageProductDependencies = (
+				CE355B9D2C42E74E00898965 /* Lottie */,
+			);
 			productName = Malltiverse;
 			productReference = CE2B01E52C41A0570085BF39 /* Malltiverse.app */;
 			productType = "com.apple.product-type.application";
@@ -234,6 +273,9 @@
 				Base,
 			);
 			mainGroup = CE2B01DC2C41A0570085BF39;
+			packageReferences = (
+				CE355B9C2C42E74E00898965 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = CE2B01E62C41A0570085BF39 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -269,13 +311,19 @@
 				CE2B02032C41A0B90085BF39 /* PrimaryButton.swift in Sources */,
 				CEDD6DFC2C41F46200751024 /* CustomTabView.swift in Sources */,
 				CE2B02042C41A0B90085BF39 /* AddButton.swift in Sources */,
+				CEE6017C2C42549400C960A1 /* CartViewModel.swift in Sources */,
 				CE2B02072C41A0B90085BF39 /* ViewModel.swift in Sources */,
+				CEE6017A2C4253CE00C960A1 /* CartView.swift in Sources */,
 				CE2B020E2C41A0C50085BF39 /* PhotoModel.swift in Sources */,
 				CE2B02022C41A0B90085BF39 /* ProductCard.swift in Sources */,
+				CEE601832C42DBEA00C960A1 /* CheckoutView.swift in Sources */,
+				CEE601802C42D04000C960A1 /* ShoppingSummary.swift in Sources */,
 				CE2B020F2C41A0C50085BF39 /* ProductsModel.swift in Sources */,
+				CE355B9B2C42E28D00898965 /* CheckoutSuccess.swift in Sources */,
 				CE2B02182C41A0D70085BF39 /* AppErrors.swift in Sources */,
 				CEDD6DF62C41E6AF00751024 /* ProductRating.swift in Sources */,
 				CE2B02142C41A0CF0085BF39 /* GetProducts.swift in Sources */,
+				CEE6017E2C42B86E00C960A1 /* CustomAppBar.swift in Sources */,
 				CEDD6DF22C41DF0C00751024 /* CategoryModel.swift in Sources */,
 				CEDD6DFA2C41F33B00751024 /* AppTabView.swift in Sources */,
 				CE2B02102C41A0C50085BF39 /* PriceModel.swift in Sources */,
@@ -484,6 +532,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE355B9C2C42E74E00898965 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE355B9D2C42E74E00898965 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE355B9C2C42E74E00898965 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE2B01DD2C41A0570085BF39 /* Project object */;
 }

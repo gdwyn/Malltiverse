@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ProductRating: View {
-    let rating: Int
+    let rating = 5
     let maximumRating = 5
     
-    init() {
-        self.rating = Int.random(in: 1...5)
-    }
+//    init() {
+//        self.rating = Int.random(in: 1...5)
+//    }
     
     var body: some View {
         HStack(spacing: 1) {

@@ -71,7 +71,7 @@ struct ProductCard: View {
                 Text("N/A")
             } //price
             
-            PrimaryButton(title: "Add to cart", isFilled: false) {
+            SecondaryButton(title: "Add to cart") {
                 action()
             }
             
