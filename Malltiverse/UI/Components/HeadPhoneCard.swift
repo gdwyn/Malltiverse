@@ -29,7 +29,7 @@ struct HeadPhoneCard: View {
             .padding(.trailing, 24)
             
         } //headphone banner
-        .padding(.bottom, 40)
+        .padding(.bottom, 32)
     }
 }
 

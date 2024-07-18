@@ -54,7 +54,7 @@ struct CartView: View {
                                                     // handle different PriceValue cases
                                                     switch firstPriceValue {
                                                     case .double(let value):
-                                                        Text("N \(value, specifier: "%.2f")")
+                                                        Text("N \(value * checkoutItem.availableQuantity, specifier: "%.2f")")
                                                             .foregroundStyle(.gray)
                                                             .font(.callout)
                                                     case .array(let values):

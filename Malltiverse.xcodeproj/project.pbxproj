@@ -36,6 +36,8 @@
 		CEE6017E2C42B86E00C960A1 /* CustomAppBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6017D2C42B86E00C960A1 /* CustomAppBar.swift */; };
 		CEE601802C42D04000C960A1 /* ShoppingSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6017F2C42D04000C960A1 /* ShoppingSummary.swift */; };
 		CEE601832C42DBEA00C960A1 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE601822C42DBEA00C960A1 /* CheckoutView.swift */; };
+		CEF0C4BE2C49437600D1E118 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0C4BD2C49437600D1E118 /* FavoritesView.swift */; };
+		CEF0C4C12C49438900D1E118 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF0C4C02C49438900D1E118 /* HistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		CEE6017D2C42B86E00C960A1 /* CustomAppBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAppBar.swift; sourceTree = "<group>"; };
 		CEE6017F2C42D04000C960A1 /* ShoppingSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingSummary.swift; sourceTree = "<group>"; };
 		CEE601822C42DBEA00C960A1 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		CEF0C4BD2C49437600D1E118 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		CEF0C4C02C49438900D1E118 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 		CE2B01FC2C41A0B80085BF39 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CEF0C4BF2C49437A00D1E118 /* History */,
+				CEF0C4BC2C49436000D1E118 /* Favorites */,
 				CE2B01FD2C41A0B80085BF39 /* Home */,
 				CEE601782C4253A700C960A1 /* Cart */,
 				CEE601812C42DBCF00C960A1 /* Checkout */,
@@ -237,6 +243,22 @@
 			path = Checkout;
 			sourceTree = "<group>";
 		};
+		CEF0C4BC2C49436000D1E118 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				CEF0C4BD2C49437600D1E118 /* FavoritesView.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		CEF0C4BF2C49437A00D1E118 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				CEF0C4C02C49438900D1E118 /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -321,6 +343,7 @@
 				CE2B01E92C41A0570085BF39 /* MalltiverseApp.swift in Sources */,
 				CE2B02032C41A0B90085BF39 /* PrimaryButton.swift in Sources */,
 				CEDD6DFC2C41F46200751024 /* CustomTabView.swift in Sources */,
+				CEF0C4BE2C49437600D1E118 /* FavoritesView.swift in Sources */,
 				CE355BA12C43126D00898965 /* PaymentView.swift in Sources */,
 				CE2B02042C41A0B90085BF39 /* AddButton.swift in Sources */,
 				CEE6017C2C42549400C960A1 /* CartViewModel.swift in Sources */,
@@ -333,6 +356,7 @@
 				CE2B020F2C41A0C50085BF39 /* ProductsModel.swift in Sources */,
 				CE355B9B2C42E28D00898965 /* CheckoutSuccess.swift in Sources */,
 				CE2B02182C41A0D70085BF39 /* AppErrors.swift in Sources */,
+				CEF0C4C12C49438900D1E118 /* HistoryView.swift in Sources */,
 				CEDD6DF62C41E6AF00751024 /* ProductRating.swift in Sources */,
 				CE2B02142C41A0CF0085BF39 /* GetProducts.swift in Sources */,
 				CEE6017E2C42B86E00C960A1 /* CustomAppBar.swift in Sources */,

@@ -77,7 +77,7 @@ struct PaymentView: View {
             
                 Spacer()
             }
-            .padding(24)
+            .padding(.horizontal, 24)
             .sheet(isPresented: $showSheet) {
                 CheckoutSuccess()
             }

@@ -20,8 +20,17 @@ struct CustomAppBar: View {
                 .fontWeight(.semibold)
             Spacer()
             
-            Spacer()
+            NavigationLink{
+                HistoryView()
+            } label: {
+                HStack{
+                    Image(systemName: "clock")
+                    Text("History")
+                }
+                .foregroundStyle(.gray)
                 .frame(width: 99)
+
+            }
         }
     }
 }

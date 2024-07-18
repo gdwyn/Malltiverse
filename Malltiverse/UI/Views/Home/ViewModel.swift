@@ -6,14 +6,20 @@
 //
 
 import Foundation
+import SwiftUI
 
 class HomeViewModel: ObservableObject {
-    
+    @Published private var path = NavigationPath()
+
     @Published var products: [ItemsModel] = []
     @Published var cartItems: [ItemsModel] = []
+    @Published var history: [ItemsModel] = []
+    @Published var favorites: [ItemsModel] = []
 
     @Published var isLoading = false
     @Published var errorMessage: String?
+    
+    @Published var tabOpacity = true
     
     func removeItem(_ item: ItemsModel) {
             if let index = cartItems.firstIndex(where: { $0.id == item.id }) {

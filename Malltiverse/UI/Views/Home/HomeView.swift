@@ -16,7 +16,7 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 32) {
+            VStack(spacing: 24) {
                 CustomAppBar(title: "Product List")
                     .padding(.horizontal, 24)
                 
@@ -83,7 +83,7 @@ struct HomeView: View {
                                             }
                                         }
                                     }
-                                    .padding(.bottom, 64)
+                                    .padding(.bottom, 58)
                                 }// tech
                             
                             VStack(alignment: .leading, spacing: 16) {
@@ -105,7 +105,7 @@ struct HomeView: View {
                                         }
                                     }
                                 }
-                                .padding(.bottom, 64)
+                                .padding(.bottom, 58)
                             }// men
                             
                             VStack(alignment: .leading, spacing: 16) {
@@ -127,7 +127,7 @@ struct HomeView: View {
                                         }
                                     }
                                 }
-                                .padding(.bottom, 64)
+                                .padding(.bottom, 58)
                             }// women
                             
                         }// scrollview
@@ -140,6 +140,8 @@ struct HomeView: View {
             .task{
                 await vm.loadProducts()
             }
+            .toolbar(.hidden, for: .tabBar)
+        
         }
         
     }

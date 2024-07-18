@@ -72,6 +72,7 @@ struct CheckoutView: View {
                 
                 PrimaryButton(title: "Make payment") {
                     showSheet = true
+                    vm.history.append(contentsOf: vm.cartItems)
                     vm.cartItems.removeAll()
                 }
             
