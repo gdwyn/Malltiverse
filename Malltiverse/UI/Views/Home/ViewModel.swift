@@ -21,6 +21,7 @@ class HomeViewModel: ObservableObject {
     
     @Published var tabOpacity = true
     
+    
     func removeItem(_ item: ItemsModel) {
             if let index = cartItems.firstIndex(where: { $0.id == item.id }) {
                 cartItems.remove(at: index)

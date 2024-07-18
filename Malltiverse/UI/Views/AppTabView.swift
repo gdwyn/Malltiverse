@@ -5,12 +5,15 @@
 //  Created by Godwin IE on 13/07/2024.
 //
 
+import Combine
 import SwiftUI
 
 struct AppTabView: View {
     @StateObject var homeViewModel = HomeViewModel()
 
     @State private var tabSelection = 1
+    
+    @State private var isKeyboardVisible = false
     
     var body: some View {
         TabView(selection: $tabSelection) {
@@ -31,13 +34,15 @@ struct AppTabView: View {
                 .tag(3)
         }
         .overlay(alignment: .bottom) {
-           CustomTabView(tabSelection: $tabSelection)
-                .scaleEffect(homeViewModel.tabOpacity ? 1 : 0)
-            
-        }
+                    if !isKeyboardVisible {
+                        CustomTabView(tabSelection: $tabSelection)
+                            .scaleEffect(homeViewModel.tabOpacity ? 1 : 0)
+                    }
+                }
+                .keyboardAware(isKeyboardVisible: $isKeyboardVisible)
     }
 }
 
-#Preview {
-    AppTabView()
-}
+//#Preview {
+//    AppTabView()
+//}
