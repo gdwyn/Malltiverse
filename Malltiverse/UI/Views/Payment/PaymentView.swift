@@ -13,6 +13,8 @@ struct PaymentView: View {
     @State private var cvv = ""
     
     @State private var showSheet = false
+    @State private var isPaid = false
+
     @Environment(\.presentationMode) var presentationMode
     
     @EnvironmentObject var vm: HomeViewModel
@@ -79,8 +81,10 @@ struct PaymentView: View {
             }
             .padding(.horizontal, 24)
             .sheet(isPresented: $showSheet) {
-                CheckoutSuccess()
-            }
+                CheckoutSuccess(isPaid: $isPaid) {
+                    presentationMode.wrappedValue.dismiss()
+
+                }            }
         }
     }
 }

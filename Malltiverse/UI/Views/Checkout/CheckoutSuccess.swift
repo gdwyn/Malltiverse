@@ -10,6 +10,10 @@ import SwiftUI
 
 struct CheckoutSuccess: View {
     @Environment (\.dismiss) private var dismiss
+    
+    @Binding var isPaid: Bool
+    let onPaymentSuccess: () -> Void
+
 
     var body: some View {
         ZStack {
@@ -25,6 +29,8 @@ struct CheckoutSuccess: View {
                     
                     Button {
                         dismiss()
+                        isPaid = true
+                        onPaymentSuccess()
                     } label: {
                         Image(systemName: "x.circle.fill")
                             .foregroundStyle(.gray.opacity(0.5))
@@ -54,10 +60,7 @@ struct CheckoutSuccess: View {
                     
                     Spacer()
                     
-//                    PrimaryButton(title: "Done") {
-//                        dismiss()
-//                    }
-//                    .frame(width: 140)
+
                     
                     
                 }
@@ -65,9 +68,13 @@ struct CheckoutSuccess: View {
             }
             
         }
+        .onDisappear{
+            isPaid = true
+            onPaymentSuccess()
+        }
     }
 }
 
 #Preview {
-    CheckoutSuccess()
+    CheckoutSuccess(isPaid: .constant(false)) {}
 }

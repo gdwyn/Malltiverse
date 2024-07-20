@@ -13,6 +13,7 @@ struct CheckoutView: View {
     @State private var cvv = ""
     
     @State private var showSheet = false
+    @State private var isPaid = false
     @Environment(\.presentationMode) var presentationMode
     
     @EnvironmentObject var vm: HomeViewModel
@@ -80,7 +81,10 @@ struct CheckoutView: View {
             }
             .padding(24)
             .sheet(isPresented: $showSheet) {
-                CheckoutSuccess()
+                CheckoutSuccess(isPaid: $isPaid) {
+                    presentationMode.wrappedValue.dismiss()
+
+                }
             }
             .navigationBarBackButtonHidden(true)
             .toolbar {
@@ -97,6 +101,22 @@ struct CheckoutView: View {
                 }
                 
             }
+            .onAppear {
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 ) {
+                    withAnimation(.smooth(duration: 0.1)) {
+                        vm.tabOpacity = false
+                    }
+                }
+                
+            }
+            
+            .onDisappear {
+                withAnimation(.smooth(duration: 0.1)) {
+                    vm.tabOpacity = true
+                }
+            }
+            
 
         }
     }

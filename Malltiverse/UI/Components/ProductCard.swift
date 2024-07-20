@@ -9,34 +9,51 @@ import SwiftUI
 
 struct ProductCard: View {
     var item: ItemsModel
-    var action: () -> Void
+    @EnvironmentObject var vm: HomeViewModel
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
-            VStack {
-                
-                if let imageUrl = item.photos.first?.url,
-                   let url = URL(string: "https://api.timbu.cloud/images/\(imageUrl)") {
+            
+            NavigationLink {
+                DetailView(product: item)
+            } label: {
+                ZStack(alignment: .topTrailing) {
+                        
+                        if let imageUrl = item.photos.first?.url,
+                           let url = URL(string: "https://api.timbu.cloud/images/\(imageUrl)") {
+                            
+                            AsyncImage(url: url) { image in
+                                image
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 84, height: 84)
+                                    .padding(40)
+                            } placeholder: {
+                                ProgressView()
+                                    .frame(width: 84, height: 84)
+                                    .padding(40)
+                            }
+                        }
+                                        
+                        Button {
+                            vm.bookmarks.contains(where: { $0.id == item.id })
+                            ? vm.removeBookmark(item)
+                            : vm.bookmarks.append(item)
+
+                        } label: {
+                            Image(systemName: vm.bookmarks.contains(where: { $0.id == item.id })
+                                ? "bookmark.fill"
+                                : "bookmark")
+                                .padding(10)
+                                .background(.white)
+                                .clipShape(.circle)
+                        }
+                        .padding(10)
                     
-                    AsyncImage(url: url) { image in
-                        image
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 130)
-                            .padding(.vertical, 20)
-                    } placeholder: {
-                        ProgressView()
-                            .frame(width: 130)
-                            .frame(height: 90)
-                            .padding(.vertical, 20)
-                    }
                 }
-                
+                .background(.gray.opacity(0.05))
+                .clipShape(RoundedRectangle(cornerRadius: 5))
             }
-            .frame(width: 150, height: 150)
-            .padding(16)
-            .background(.gray.opacity(0.05))
-            .clipShape(RoundedRectangle(cornerRadius: 5))
             
             VStack(alignment: .leading, spacing: 10) {
                 Text(item.name)
@@ -72,7 +89,7 @@ struct ProductCard: View {
             } //price
             
             SecondaryButton(title: "Add to cart") {
-                action()
+                vm.addItem(item)
             }
             
             

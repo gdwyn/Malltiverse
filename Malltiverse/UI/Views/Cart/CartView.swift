@@ -105,12 +105,12 @@ struct CartView: View {
                             
                             ShoppingSummary()
                             
-                            NavigationLink(
-                                destination: CheckoutView(),
-                                isActive: $showCheckout
-                            ) {
+                            NavigationLink{
+                                CheckoutView()
+                               // isActive: $showCheckout
+                            } label: {
                                 PrimaryButton(title: "Checkout") {
-                                    showCheckout = true
+                                    //showCheckout = true
                                 }
                                 .padding()
                             }

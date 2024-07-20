@@ -1,5 +1,5 @@
 //
-//  HistoryView.swift
+//  FavoritesView.swift
 //  Malltiverse
 //
 //  Created by Godwin IE on 18/07/2024.
@@ -7,21 +7,21 @@
 
 import SwiftUI
 
-struct HistoryView: View {
+struct BookmarksView: View {
     @EnvironmentObject var vm: HomeViewModel
     
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
-                if !vm.history.isEmpty {
+                if !vm.bookmarks.isEmpty {
                     HStack {
-                        Text("History")
+                        Text("Favorites")
                             .bold()
                         
                         Spacer()
                         
-                        Button("Clear history") {
-                            vm.history.removeAll()
+                        Button("Clear favorites") {
+                            vm.bookmarks.removeAll()
                         }
                         .font(.callout)
                         .foregroundStyle(.gray)
@@ -29,15 +29,15 @@ struct HistoryView: View {
                     
                     ScrollView {
                         VStack(alignment: .leading, spacing: 16) {
-                            
-                            ForEach($vm.history, id: \.id) { $history in
-                                NavigationLink {
-                                    DetailView(product: history)
-                                } label: {
-                                    
+                           
+                                ForEach($vm.bookmarks, id: \.id) { $bookmark in
+                                    NavigationLink {
+                                        DetailView(product: bookmark)
+                                    } label: {
+                                        
                                     HStack(spacing: 18) {
                                         
-                                        if let imageUrl = history.photos.first?.url,
+                                        if let imageUrl = bookmark.photos.first?.url,
                                            let url = URL(string: "https://api.timbu.cloud/images/\(imageUrl)") {
                                             
                                             AsyncImage(url: url) { image in
@@ -52,7 +52,7 @@ struct HistoryView: View {
                                             } placeholder: {
                                                 ProgressView()
                                                     .frame(width: 80, height: 80)
-                                                //.background(.gray.opacity(0.1))
+                                                    //.background(.gray.opacity(0.1))
                                                     .clipShape(RoundedRectangle(cornerSize: CGSize(width: 18, height: 18)))
                                             }
                                             
@@ -60,18 +60,36 @@ struct HistoryView: View {
                                         
                                         
                                         VStack(alignment: .leading, spacing: 8) {
-                                            Text(history.name)
+                                            HStack {
+                                                Text(bookmark.name)
+                                                    .foregroundStyle(.dark)
+                                                    .multilineTextAlignment(.leading)
+                                                
+                                                Spacer()
+                                                
+                                                Button {
+                                                    withAnimation {
+                                                        vm.removeBookmark(bookmark) 
+                                                    }
+                                                } label: {
+                                                    Image(systemName: "bookmark.fill")
+                                                        .foregroundStyle(.gray)
+                                                        .padding(10)
+                                                        .background(.gray.opacity(0.1))
+                                                        .clipShape(.circle)
+                                                }
+                                            }
                                             
                                             HStack {
-                                                Text(String(format: "%.0f pcs", history.availableQuantity))
+                                                Text(String(format: "%.0f pcs", bookmark.availableQuantity))
                                                     .foregroundStyle(.gray)
                                                 
                                                 Spacer()
                                                 
-                                                if let firstPriceValue = history.currentPrice.first?.NGN.first {
+                                                if let firstPriceValue = bookmark.currentPrice.first?.NGN.first {
                                                     switch firstPriceValue {
                                                     case .double(let value):
-                                                        Text("N \(value * history.availableQuantity, specifier: "%.2f")")
+                                                        Text("N \(value * bookmark.availableQuantity, specifier: "%.2f")")
                                                             .foregroundStyle(.gray)
                                                             .font(.callout)
                                                     case .array(let values):
@@ -81,7 +99,7 @@ struct HistoryView: View {
                                                         Text("N/A")
                                                     }
                                                 } else {
-                                                    Text("N/A")
+                                                Text("N/A")
                                                 } //price
                                             }
                                         }
@@ -92,7 +110,7 @@ struct HistoryView: View {
                                 }
                             }
                         }
-                        
+                       
                     }
                 } else {
                     ContentUnavailableView("No orders yet", systemImage: "cart.fill", description: Text("Add items to your cart"))
@@ -117,5 +135,5 @@ struct HistoryView: View {
 }
 
 #Preview {
-    HistoryView()
+    BookmarksView()
 }

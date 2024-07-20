@@ -14,13 +14,18 @@ class HomeViewModel: ObservableObject {
     @Published var products: [ItemsModel] = []
     @Published var cartItems: [ItemsModel] = []
     @Published var history: [ItemsModel] = []
-    @Published var favorites: [ItemsModel] = []
+    @Published var bookmarks: [ItemsModel] = []
 
     @Published var isLoading = false
     @Published var errorMessage: String?
     
     @Published var tabOpacity = true
     
+    func removeBookmark(_ bookmark: ItemsModel) {
+      if let index = bookmarks.firstIndex(where: { $0.id == bookmark.id }) {
+          bookmarks.remove(at: index)
+      }
+    }
     
     func removeItem(_ item: ItemsModel) {
             if let index = cartItems.firstIndex(where: { $0.id == item.id }) {

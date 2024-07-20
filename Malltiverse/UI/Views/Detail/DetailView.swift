@@ -14,8 +14,10 @@ struct DetailView: View {
     @State private var toastMessage = ""
     @State private var toastScale = 0.0
     
+    @EnvironmentObject var vm: HomeViewModel
+    
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ZStack {
                 VStack(alignment: .leading, spacing: 18) {
                     
@@ -85,6 +87,7 @@ struct DetailView: View {
                             showToast(message: "\(product.name) added to cart!")
                             withAnimation(.easeInOut(duration: 0.4)) {
                                 toastScale = 1
+                                vm.addItem(product)
                             
                             }
                         }
@@ -121,6 +124,23 @@ struct DetailView: View {
                 } //toast
                 
             }
+            .toolbar(.hidden, for: .tabBar)
+            .onAppear {
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 ) {
+                    withAnimation(.smooth(duration: 0.1)) {
+                        vm.tabOpacity = false
+                    }
+                }
+
+            }
+            
+            .onDisappear {
+                withAnimation(.smooth(duration: 0.1)) {
+                    vm.tabOpacity = true
+                }
+            }
+            
         }
     }
     

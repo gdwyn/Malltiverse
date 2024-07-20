@@ -21,10 +21,6 @@ struct AppTabView: View {
                 .environmentObject(homeViewModel)
                 .tag(1)
             
-            PaymentView()
-                .environmentObject(homeViewModel)
-                .tag(3)
-            
             CartView()
                 .environmentObject(homeViewModel)
                 .tag(2)

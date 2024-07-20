@@ -64,69 +64,87 @@ struct HomeView: View {
                             .contentMargins(14, for: .scrollContent)
                             .scrollTargetBehavior(.viewAligned)
                                 
-                                VStack(alignment: .leading, spacing: 16) {
+                                VStack(alignment: .leading, spacing: 8) {
                                     Text("Tech gadgets")
                                         .font(.title3)
                                         .fontWeight(.semibold)
                                         .padding(.horizontal, 24)
                                     
                                     ScrollView(.horizontal, showsIndicators: false) {
-                                        HStack {
-                                            Spacer()
-                                                .frame(width: 24)
-                                            LazyHStack(spacing: 14) {
+                                
+                                            LazyHStack(spacing: 24) {
                                                 ForEach(vm.filterProducts(forCategory: "tech gagdet")) { item in
-                                                    ProductCard(item: item) {
-                                                        vm.addItem(item)
+                                                    ProductCard(item: item)
+                                                    .containerRelativeFrame(.horizontal, count: 2, spacing: 24)
+                                                    .scrollTransition { content, phase in
+                                                        content
+                                                            .opacity(phase.isIdentity ? 1 : 0)
+                                                            .scaleEffect(phase.isIdentity ? 1 : 0)
                                                     }
                                                 }
                                             }
-                                        }
+                                            .scrollTargetLayout()
+                                            
                                     }
+                                    .contentMargins(14, for: .scrollContent)
+                                    .scrollTargetBehavior(.viewAligned)
+                                    .padding(.horizontal)
                                     .padding(.bottom, 58)
                                 }// tech
                             
-                            VStack(alignment: .leading, spacing: 16) {
+                            VStack(alignment: .leading, spacing: 8) {
                                 Text("Men’s Fashion")
                                     .font(.title3)
                                     .fontWeight(.semibold)
                                     .padding(.horizontal, 24)
                                 
                                 ScrollView(.horizontal, showsIndicators: false) {
-                                    HStack {
-                                        Spacer()
-                                            .frame(width: 24)
-                                        LazyHStack(spacing: 14) {
+                            
+                                        LazyHStack(spacing: 24) {
                                             ForEach(vm.filterProducts(forCategory: "men's fashion")) { item in
-                                                ProductCard(item: item) {
-                                                    vm.addItem(item)
+                                                ProductCard(item: item)
+                                                .containerRelativeFrame(.horizontal, count: 2, spacing: 24)
+                                                .scrollTransition { content, phase in
+                                                    content
+                                                        .opacity(phase.isIdentity ? 1 : 0)
+                                                        .scaleEffect(phase.isIdentity ? 1 : 0)
                                                 }
                                             }
                                         }
-                                    }
+                                        .scrollTargetLayout()
+                                        
                                 }
+                                .contentMargins(14, for: .scrollContent)
+                                .scrollTargetBehavior(.viewAligned)
+                                .padding(.horizontal)
                                 .padding(.bottom, 58)
                             }// men
                             
-                            VStack(alignment: .leading, spacing: 16) {
-                                Text("Women's Fashion")
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text("Women’s Fashion")
                                     .font(.title3)
                                     .fontWeight(.semibold)
                                     .padding(.horizontal, 24)
                                 
                                 ScrollView(.horizontal, showsIndicators: false) {
-                                    HStack {
-                                        Spacer()
-                                            .frame(width: 24)
-                                        LazyHStack(spacing: 14) {
-                                            ForEach(vm.filterProducts(forCategory: "men's fashion")) { item in
-                                                ProductCard(item: item) {
-                                                    vm.addItem(item)
+                            
+                                        LazyHStack(spacing: 24) {
+                                            ForEach(vm.filterProducts(forCategory: "women's fashion")) { item in
+                                                ProductCard(item: item)
+                                                .containerRelativeFrame(.horizontal, count: 2, spacing: 24)
+                                                .scrollTransition { content, phase in
+                                                    content
+                                                        .opacity(phase.isIdentity ? 1 : 0)
+                                                        .scaleEffect(phase.isIdentity ? 1 : 0)
                                                 }
                                             }
                                         }
-                                    }
+                                        .scrollTargetLayout()
+                                        
                                 }
+                                .contentMargins(14, for: .scrollContent)
+                                .scrollTargetBehavior(.viewAligned)
+                                .padding(.horizontal)
                                 .padding(.bottom, 58)
                             }// women
                             
