@@ -113,22 +113,14 @@ struct BookmarksView: View {
                        
                     }
                 } else {
-                    ContentUnavailableView("No orders yet", systemImage: "cart.fill", description: Text("Add items to your cart"))
+                    ContentUnavailableView(
+                        "No bookmarks yet",
+                        systemImage: "heart.fill",
+                        description: Text(""))
                 }
             }
-            //.navigationTitle("History")
             .padding()
             .toolbar(.hidden, for: .tabBar)
-            .onAppear {
-                withAnimation {
-                    vm.tabOpacity = false
-                }
-            }
-            .onDisappear {
-                withAnimation {
-                    vm.tabOpacity = true
-                }
-            }
             
         }
     }

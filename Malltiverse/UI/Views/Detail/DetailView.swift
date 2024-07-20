@@ -128,7 +128,7 @@ struct DetailView: View {
             .onAppear {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 ) {
-                    withAnimation(.smooth(duration: 0.1)) {
+                    withAnimation(.smooth(duration: 0.5)) {
                         vm.tabOpacity = false
                     }
                 }
@@ -136,7 +136,7 @@ struct DetailView: View {
             }
             
             .onDisappear {
-                withAnimation(.smooth(duration: 0.1)) {
+                withAnimation(.smooth(duration: 0.5)) {
                     vm.tabOpacity = true
                 }
             }

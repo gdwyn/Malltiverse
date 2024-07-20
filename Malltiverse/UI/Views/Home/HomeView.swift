@@ -16,7 +16,7 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 24) {
+            VStack(spacing: 20) {
                 CustomAppBar(title: "Product List")
                     .padding(.horizontal, 24)
                 
@@ -48,9 +48,11 @@ struct HomeView: View {
                             
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack{
-                                    ForEach(1..<4, id: \.self) { card in
-                                        HeadPhoneCard()
-                                           // .padding(.horizontal, 24)
+                                    ForEach(0..<3, id: \.self) { card in
+                                        vm.featuredImages[card]
+                                            .resizable()
+                                            .scaledToFit()
+                                            .padding(.horizontal, 8)
                                             .containerRelativeFrame(.horizontal, count: 1, spacing: 24)
                                             .scrollTransition { content, phase in
                                                 content
@@ -69,6 +71,8 @@ struct HomeView: View {
                                         .font(.title3)
                                         .fontWeight(.semibold)
                                         .padding(.horizontal, 24)
+                                        .padding(.top, 14)
+
                                     
                                     ScrollView(.horizontal, showsIndicators: false) {
                                 
@@ -89,7 +93,7 @@ struct HomeView: View {
                                     .contentMargins(14, for: .scrollContent)
                                     .scrollTargetBehavior(.viewAligned)
                                     .padding(.horizontal)
-                                    .padding(.bottom, 58)
+                                    .padding(.bottom, 40)
                                 }// tech
                             
                             VStack(alignment: .leading, spacing: 8) {
@@ -117,7 +121,7 @@ struct HomeView: View {
                                 .contentMargins(14, for: .scrollContent)
                                 .scrollTargetBehavior(.viewAligned)
                                 .padding(.horizontal)
-                                .padding(.bottom, 58)
+                                .padding(.bottom, 40)
                             }// men
                             
                             VStack(alignment: .leading, spacing: 8) {
@@ -145,7 +149,7 @@ struct HomeView: View {
                                 .contentMargins(14, for: .scrollContent)
                                 .scrollTargetBehavior(.viewAligned)
                                 .padding(.horizontal)
-                                .padding(.bottom, 58)
+                                .padding(.bottom, 40)
                             }// women
                             
                         }// scrollview

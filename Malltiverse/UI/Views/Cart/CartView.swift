@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CartView: View {
     @EnvironmentObject var vm: HomeViewModel
-    @State private var showCheckout = false
     
     var body: some View {
         NavigationStack{
@@ -107,13 +106,18 @@ struct CartView: View {
                             
                             NavigationLink{
                                 CheckoutView()
-                               // isActive: $showCheckout
                             } label: {
-                                PrimaryButton(title: "Checkout") {
-                                    //showCheckout = true
-                                }
-                                .padding()
+                                Text("Checkout")
+                                    .frame(maxWidth: .infinity)
+                                    .font(.callout)
+                                    .foregroundColor(.dark)
+                                    .padding(18)
+                                    .background(.accent)
+                                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                        
                             }
+                            .padding()
+                            .padding(.bottom, 16)
                         }
                         .padding()
                     }

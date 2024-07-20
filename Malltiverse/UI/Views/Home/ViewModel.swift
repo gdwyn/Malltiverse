@@ -15,6 +15,12 @@ class HomeViewModel: ObservableObject {
     @Published var cartItems: [ItemsModel] = []
     @Published var history: [ItemsModel] = []
     @Published var bookmarks: [ItemsModel] = []
+    
+    let featuredImages = [
+    Image("f1"),
+    Image("f2"),
+    Image("f3")
+    ]
 
     @Published var isLoading = false
     @Published var errorMessage: String?

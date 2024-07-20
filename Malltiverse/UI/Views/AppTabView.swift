@@ -32,6 +32,7 @@ struct AppTabView: View {
         .overlay(alignment: .bottom) {
                     if !isKeyboardVisible {
                         CustomTabView(tabSelection: $tabSelection)
+                            .opacity(homeViewModel.tabOpacity ? 1 : 0)
                             .scaleEffect(homeViewModel.tabOpacity ? 1 : 0)
                     }
                 }
