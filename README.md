@@ -9,6 +9,7 @@ A shopping app built using SwiftUI, providing users with a seamless shopping exp
 - Adding items to cart
 - Checkout
 - Bookmark/wishlist
+- Stoee cart items/bookmarks and order history to local storage
 - Order history
 
 ## Screenshots
