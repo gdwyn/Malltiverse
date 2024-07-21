@@ -9,85 +9,143 @@ import Foundation
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
-    @Published private var path = NavigationPath()
-
-    @Published var products: [ItemsModel] = []
-    @Published var cartItems: [ItemsModel] = []
-    @Published var history: [ItemsModel] = []
-    @Published var bookmarks: [ItemsModel] = []
+    @Published var showToast = false
+    @Published var toastMessage = ""
+    @Published var toastScale = 0.0
     
+    @Published var products: [ItemsModel] = []
+
+    // Cart list
+    @Published var cartItems: [ItemsModel] = [] {
+        didSet {
+            let encoder = JSONEncoder()
+            do {
+                let encoded = try encoder.encode(cartItems)
+                UserDefaults.standard.set(encoded, forKey: "CartItem")
+            } catch {
+                print("Failed to encode cartItems: \(error)")
+            }
+        }
+    }
+
+    // History
+    @Published var history: [ItemsModel] = [] {
+        didSet {
+            let encoder = JSONEncoder()
+            do {
+                let encoded = try encoder.encode(history)
+                UserDefaults.standard.set(encoded, forKey: "HistoryItem")
+            } catch {
+                print("Failed to encode history: \(error)")
+            }
+        }
+    }
+
+    // Bookmarks
+    @Published var bookmarks: [ItemsModel] = [] {
+        didSet {
+            let encoder = JSONEncoder()
+            do {
+                let encoded = try encoder.encode(bookmarks)
+                UserDefaults.standard.set(encoded, forKey: "BookmarkItem")
+            } catch {
+                print("Failed to encode bookmarks: \(error)")
+            }
+        }
+    }
+
+    init() {
+        // Init cart
+        if let savedItems = UserDefaults.standard.data(forKey: "CartItem"),
+           let decodedItems = try? JSONDecoder().decode([ItemsModel].self, from: savedItems) {
+            cartItems = decodedItems
+        } else {
+            cartItems = []
+        }
+
+        // Init history
+        if let savedItems = UserDefaults.standard.data(forKey: "HistoryItem"),
+           let decodedItems = try? JSONDecoder().decode([ItemsModel].self, from: savedItems) {
+            history = decodedItems
+        } else {
+            history = []
+        }
+
+        // Init bookmarks
+        if let savedItems = UserDefaults.standard.data(forKey: "BookmarkItem"),
+           let decodedItems = try? JSONDecoder().decode([ItemsModel].self, from: savedItems) {
+            bookmarks = decodedItems
+        } else {
+            bookmarks = []
+        }
+    }
+
     let featuredImages = [
-    Image("f1"),
-    Image("f2"),
-    Image("f3")
+        Image("f1"),
+        Image("f2"),
+        Image("f3")
     ]
 
     @Published var isLoading = false
     @Published var errorMessage: String?
-    
+
     @Published var tabOpacity = true
-    
+
     func removeBookmark(_ bookmark: ItemsModel) {
-      if let index = bookmarks.firstIndex(where: { $0.id == bookmark.id }) {
-          bookmarks.remove(at: index)
-      }
-    }
-    
-    func removeItem(_ item: ItemsModel) {
-            if let index = cartItems.firstIndex(where: { $0.id == item.id }) {
-                cartItems.remove(at: index)
-            }
+        if let index = bookmarks.firstIndex(where: { $0.id == bookmark.id }) {
+            bookmarks.remove(at: index)
         }
-    
+    }
+
+    func removeItem(_ item: ItemsModel) {
+        if let index = cartItems.firstIndex(where: { $0.id == item.id }) {
+            cartItems.remove(at: index)
+        }
+    }
+
     func addItem(_ item: ItemsModel) {
-        //check if item is already on our list
-        if let index = cartItems.firstIndex(where: { $0.id == item.id
-        }) {
-            //increase qty if we have item
+        // Check if item is already in the list
+        if let index = cartItems.firstIndex(where: { $0.id == item.id }) {
+            // Increase quantity if we have the item
             cartItems[index].availableQuantity += 1
         } else {
-            //else add item
+            // Else add item
             var newItem = item
             newItem.availableQuantity = 1
             cartItems.append(newItem)
         }
     }
-    
+
     func filterProducts(forCategory categoryName: String) -> [ItemsModel] {
-            products.filter { item in
-                item.categories.contains { $0.name == categoryName }
-            }
+        products.filter { item in
+            item.categories.contains { $0.name == categoryName }
         }
-    
+    }
+
     func loadProducts() async {
-                
         DispatchQueue.main.async {
-                   self.isLoading = true
-               }
-        
+            self.isLoading = true
+        }
+
         do {
-            
             let productsModel = try await getProducts()
-                        
             DispatchQueue.main.async {
                 self.products = productsModel.items
                 self.isLoading = false
-            } //update products array
-                        
-            
+            } // Update products array
+
         } catch AppErrors.invalidData {
             DispatchQueue.main.async {
                 self.errorMessage = "The data provided is invalid. Please try again."
                 self.isLoading = false
             }
-            
+
         } catch AppErrors.invalidResponse {
-            
             DispatchQueue.main.async {
                 self.errorMessage = "Invalid response from the server. Please try again."
                 self.isLoading = false
             }
-            
+
         } catch AppErrors.invalidURL {
             DispatchQueue.main.async {
                 self.errorMessage = "The url provided is invalid. Please try again."
@@ -106,6 +164,9 @@ class HomeViewModel: ObservableObject {
                 self.isLoading = false
             }
         }
-    } // loadproducts func
+    }
 
+    func clearCart() {
+        cartItems.removeAll()
+    }
 }

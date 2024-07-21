@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CustomTabView: View {
     @Binding var tabSelection: Int
-    @Namespace private var animationNamespace
+   // @Namespace private var animationNamespace
     
     let tabBarItems: [(image: String, title: String)] = [
         ("khome", "home"),

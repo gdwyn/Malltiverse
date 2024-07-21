@@ -90,6 +90,14 @@ struct ProductCard: View {
             
             SecondaryButton(title: "Add to cart") {
                 vm.addItem(item)
+                withAnimation {
+                    vm.toastScale = 1
+                    vm.showToast = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        vm.toastScale = 0
+                    }
+                }
+
             }
             
             

@@ -74,7 +74,7 @@ struct PaymentView: View {
                 
                 PrimaryButton(title: "Make payment") {
                     showSheet = true
-                    vm.cartItems.removeAll()
+                    //vm.cartItems.removeAll()
                 }
             
                 Spacer()
