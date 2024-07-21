@@ -5,8 +5,11 @@ A shopping app built using SwiftUI, providing users with a seamless shopping exp
 
 ## Features
 - Home screen with items fetched from timbu.cloud products endpoint
+- View product details
 - Adding items to cart
 - Checkout
+- Bookmark/wishlist
+- Order history
 
 ## Screenshots
 ### Home Screen
