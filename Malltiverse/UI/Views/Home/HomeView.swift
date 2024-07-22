@@ -12,6 +12,7 @@ struct HomeView: View {
     @EnvironmentObject var vm: HomeViewModel
     
     @State private var errorMessage = ""
+    @Binding var tabSelection: Int
     
     
     var body: some View {
@@ -150,13 +151,16 @@ struct HomeView: View {
                                     .contentMargins(14, for: .scrollContent)
                                     .scrollTargetBehavior(.viewAligned)
                                     .padding(.horizontal)
-                                    .padding(.bottom, 40)
+                                    .padding(.bottom, 80)
                                 }// women
                                 
                             }// scrollview
                         
                         }
                     } //v stack
+                .refreshable {
+                   await vm.loadProducts()
+                }
                 
                 if vm.showToast {
                     VStack {
@@ -185,6 +189,6 @@ struct HomeView: View {
     }
 
 #Preview {
-    HomeView()
+    HomeView(tabSelection: .constant(2))
 }
 

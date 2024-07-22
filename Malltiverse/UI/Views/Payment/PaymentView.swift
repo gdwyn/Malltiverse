@@ -15,6 +15,8 @@ struct PaymentView: View {
     @State private var showSheet = false
     @State private var isPaid = false
 
+    @Binding var tabSelection: Int
+
     @Environment(\.presentationMode) var presentationMode
     
     @EnvironmentObject var vm: HomeViewModel
@@ -72,9 +74,23 @@ struct PaymentView: View {
                     } // cvv
                 }
                 
-                PrimaryButton(title: "Make payment") {
-                    showSheet = true
-                    //vm.cartItems.removeAll()
+                if !vm.cartItems.isEmpty {
+                    PrimaryButton(title: "Make payment") {
+                        showSheet = true
+                        vm.history.append(contentsOf: vm.cartItems)
+                        vm.clearCart()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            tabSelection = 1
+                        }
+                    }
+                } else {
+                    HStack {
+                        Image(systemName: "basket")
+                        Text("Add items to cart first")
+                    }
+                    .foregroundColor(.gray)
+                    .font(.callout)
+                    .padding()
                 }
             
                 Spacer()
@@ -83,12 +99,13 @@ struct PaymentView: View {
             .sheet(isPresented: $showSheet) {
                 CheckoutSuccess(isPaid: $isPaid) {
                     presentationMode.wrappedValue.dismiss()
-
-                }            }
+                    
+                }
+            }
         }
     }
 }
 
 #Preview {
-    PaymentView()
+    PaymentView(tabSelection: .constant(3))
 }

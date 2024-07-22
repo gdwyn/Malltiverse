@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CartView: View {
     @EnvironmentObject var vm: HomeViewModel
+    @Binding var tabSelection: Int
     
     var body: some View {
         NavigationStack{
@@ -104,8 +105,10 @@ struct CartView: View {
                             
                             ShoppingSummary()
                             
-                            NavigationLink{
-                                CheckoutView()
+                            Button{
+                                withAnimation {
+                                    tabSelection = 3
+                                }
                             } label: {
                                 Text("Checkout")
                                     .frame(maxWidth: .infinity)
@@ -128,10 +131,11 @@ struct CartView: View {
                    
             } //vstack
         }
+        .toolbar(.hidden, for: .tabBar)
 
     }
 }
 
 #Preview {
-    CartView()
+    CartView(tabSelection: .constant(2))
 }

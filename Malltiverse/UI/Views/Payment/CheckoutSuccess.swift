@@ -56,6 +56,14 @@ struct CheckoutSuccess: View {
                             .foregroundStyle(.gray)
                             .multilineTextAlignment(.center)
                             .padding(.horizontal)
+                        
+                        PrimaryButton(title: "Continue shopping") {
+                            dismiss()
+                            isPaid = true
+                            onPaymentSuccess()
+                        }
+                        .frame(width: 200)
+                        .padding()
                     }
                     
                     Spacer()

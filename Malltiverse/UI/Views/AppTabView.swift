@@ -17,23 +17,26 @@ struct AppTabView: View {
     
     var body: some View {
         TabView(selection: $tabSelection) {
-            HomeView()
+            HomeView(tabSelection: $tabSelection)
                 .environmentObject(homeViewModel)
                 .tag(1)
             
-            CartView()
+            CartView(tabSelection: $tabSelection)
                 .environmentObject(homeViewModel)
                 .tag(2)
             
-            PaymentView()
+            PaymentView(tabSelection: $tabSelection)
                 .environmentObject(homeViewModel)
                 .tag(3)
         }
         .overlay(alignment: .bottom) {
                     if !isKeyboardVisible {
-                        CustomTabView(tabSelection: $tabSelection)
-                            .opacity(homeViewModel.tabOpacity ? 1 : 0)
-                            .scaleEffect(homeViewModel.tabOpacity ? 1 : 0)
+                        if homeViewModel.tabOpacity {
+                            CustomTabView(tabSelection: $tabSelection)
+                        } else {
+                            Color.clear
+                                .frame(height: 0)
+                        }
                     }
                 }
                 .keyboardAware(isKeyboardVisible: $isKeyboardVisible)

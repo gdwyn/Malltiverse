@@ -61,6 +61,7 @@ struct HistoryView: View {
                                         
                                         VStack(alignment: .leading, spacing: 8) {
                                             Text(history.name)
+                                                .foregroundStyle(.dark)
                                             
                                             HStack {
                                                 Text(String(format: "%.0f pcs", history.availableQuantity))

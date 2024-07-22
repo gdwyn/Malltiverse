@@ -29,8 +29,10 @@ struct CustomAppBar: View {
                 } label: {
                     ZStack(alignment: .topTrailing) {
                         Image(systemName: "bookmark")
-                        BadgeView(count: vm.bookmarks.count)
-                            .offset(x: 10, y: -10)
+                            BadgeView(count: vm.bookmarks.count)
+                                .offset(x: 10, y: -10)
+                                .opacity(vm.bookmarks.isEmpty ? 0 : 1)
+                        
                     }
                 }
                 
